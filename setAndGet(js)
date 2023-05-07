@@ -1,0 +1,32 @@
+class Rectangle {
+  constructor(height, width) {
+    this._height = height;
+    this._width = width;
+  }
+
+  get area() {
+    return this._height * this._width;
+  }
+
+  set height(value) {
+    if (value < 0) {
+      console.log("Height cannot be negative");
+      return;
+    }
+    this._height = value;
+  }
+
+  set width(value) {
+    if (value < 0) {
+      console.log("Width cannot be negative");
+      return;
+    }
+    this._width = value;
+  }
+}
+
+let rect = new Rectangle(5, 10);
+console.log(rect.area); // output: 50
+rect.height = -2; // output: Height cannot be negative
+rect.width = 8;
+console.log(rect.area); // output: 40
